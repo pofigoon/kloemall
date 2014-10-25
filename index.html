@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FlyApps Responsive Multiselect Demo</title>
+    <style type="text/css">
+        @import "css/klo.css" all; /* core css */
+    </style>
+    <script type="application/javascript" src="js/jquery-2.1.1.js"></script>
+    <script type="application/javascript" src="js/jquery-collision.min.js"></script>
+    <script type="application/javascript" src="js/core.js"></script>
+    <script type="application/javascript">
+        var game;
+        $(function(){
+            if( typeof axgame == "function"){
+             game = new axgame($('.game'));
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="game">
+    </div>
+
+<!--    TEmplates -->
+    <template id="axcontainer">
+    <div class="axgame">
+        <div class="playground">
+        <div class="player">
+            <div class="hitarea"></div>
+            </div>
+        </div>
+
+    </div>
+</template>
+
+<template id="axui">
+    <div class="axmenu">
+        <div class="axhome">
+            <div class="button start" onclick="game.startGame();">START</div>
+        </div>
+
+        <div class="axwin">
+            <p>WOW, Than was awesome.. but I'm still a little bit hungry!</p>
+             <div class="button" onclick="game.startGame();">JUST A FEW PIECES MORE!</div>
+        </div>
+
+        <div class="axlose">
+              <p>EEEW! I'm not feeling good :( </p>
+             <div class="button" onclick="game.startGame();" >I'M GONNA TRY TO EAT SOMETHING ELSE!</div>
+        </div>
+
+    </div>
+
+    <div class="axoverlay">
+        <div class="eatmeter">
+        <div class="bar">
+            <div></div>
+        </div>
+        </div>
+    </div>
+</template>
+
+<template id="axitem">
+    <img class="item" data-value="{VAL}" data-type="{TYPE}" src="{IMG}"/>
+</template>
+</body>
+</html>
