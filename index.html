@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>FlyApps Responsive Multiselect Demo</title>
     <style type="text/css">
         @import "css/klo.css" all; /* core css */
@@ -29,24 +30,49 @@
             <div class="hitarea"></div>
             </div>
         </div>
-
     </div>
+
+        <audio id="sound-good">
+          <source src="sound/chew.ogg" type="audio/ogg">
+          <source src="sound/chew.mp3" type="audio/mpeg">
+        </audio>
+
+         <audio id="sound-normal">
+          <source src="sound/boo.ogg" type="audio/ogg">
+          <source src="sound/boo.mp3" type="audio/mpeg">
+        </audio>
+
+         <audio id="sound-bad">
+          <source src="sound/ouch.ogg" type="audio/ogg">
+          <source src="sound/ouch.mp3" type="audio/mpeg">
+        </audio>
+
+           <audio id="sound-win">
+          <source src="sound/yeah.ogg" type="audio/ogg">
+          <source src="sound/yeah.mp3" type="audio/mpeg">
+        </audio>
+
+           <audio id="sound-lose">
+          <source src="sound/lose.ogg" type="audio/ogg">
+          <source src="sound/lose.mp3" type="audio/mpeg">
+        </audio>
 </template>
 
 <template id="axui">
     <div class="axmenu">
         <div class="axhome">
-            <div class="button start" onclick="game.startGame();">START</div>
+<!--            <p>Про Кло та ЇЖУ!</p>-->
+            <div class="button start" onclick="game.startGame();">ЇСТИ!</div>
         </div>
 
         <div class="axwin">
-            <p>WOW, Than was awesome.. but I'm still a little bit hungry!</p>
-             <div class="button" onclick="game.startGame();">JUST A FEW PIECES MORE!</div>
+            <p>Ооох, смакота! Але я ще трошки не наїлася...</p>
+             <div class="button" onclick="game.startGame();">З'їсти ще шматочок!</div>
         </div>
 
         <div class="axlose">
-              <p>EEEW! I'm not feeling good :( </p>
-             <div class="button" onclick="game.startGame();" >I'M GONNA TRY TO EAT SOMETHING ELSE!</div>
+              <p>Здається я шось <strong>не те</strong> з'їла :( </p>
+             <div class="button" onclick="game.startGame();" >Заїсти чимось <strong>тим</strong>!</div>
         </div>
 
     </div>

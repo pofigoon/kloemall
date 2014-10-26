@@ -1,4 +1,4 @@
-var axgame = function (container, config) {
+var axgame = function (container, config, lib) {
     var _self, _container, _lib, _canvas, _config, _player, _globals;
     _self = this;
 
@@ -230,6 +230,8 @@ var axgame = function (container, config) {
              _canvas.find(".eatmeter").removeClass("hit-"+itemType);
         }, 200);
 
+         if(itemType) {document.getElementById('sound-'+itemType).play();}
+
         if(_globals.eatmeter <0) {
             _lose();
         }
@@ -242,15 +244,13 @@ var axgame = function (container, config) {
     _lose = function(){
         _self.stopGame();
         _self.navigate("lose");
+        document.getElementById('sound-lose').play();
     };
 
     _win = function(){
-        if(confirm("Eat just a little bit more?")){
-            _globals.topLevel += 100;
-        }else{
             _self.stopGame();
-               this.navigate("win");
-        }
+            _self.navigate("win");
+         document.getElementById('sound-win').play();
     };
 
     _reset = function(){
@@ -264,6 +264,7 @@ var axgame = function (container, config) {
     };
 
     _config = $.extend(_config, config);
+    if(lib) {_lib = lib;}
     _self.init();
     return this;
 }

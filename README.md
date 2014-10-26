@@ -1,1 +1,3 @@
-first commit
+simple game (test)
+
+TODO:
