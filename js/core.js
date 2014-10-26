@@ -8,7 +8,7 @@ var axgame = function (container, config, lib) {
         speed: 3000,
         playername: "player 1",
         windowSize: [640, 480],
-        maxItems: 2,
+        maxItems: 3,
         startLevel: 20,
         topLevel : 100,
         rotationEnabled: true,
@@ -163,7 +163,7 @@ var axgame = function (container, config, lib) {
         var timer = Math.floor(Math.random()*1000 + _config.speed);
 
          _globals.intervalAnimation = window.setInterval(function(){
-            if($(".snowflakes").length <= _config.maxItems)
+            if($(".item").length <= _config.maxItems)
              {
                 _itemsFall();
              }
